@@ -10,23 +10,23 @@ import os
 DIM = 64
 
 #Set your own path to images
-path = os.path.normpath('C:/Users/kenny/Desktop/toGit/misc/smallimages/')
+path = os.path.normpath('/content/drive/My Drive/subImages/')
 
 #This dictionary should be updated to hold the absolute number of images associated with each genre used during training
-styles = {'abstract': 14794,
-          'animal-painting': 1319,
-          'cityscape': 5833,
-          'figurative': 3335,
-          'flower-painting': 1260,
-          'genre-painting': 14881,
-          'landscape': 14893,
-          'marina': 1199,
-          'mythological-painting': 1670,
-          'nude-painting-nu': 2276,
-          'portrait': 14496,
-          'religious-painting': 7915,
-          'still-life': 2314,
-          'symbolic-painting': 2454}
+styles = {'abstract': 14999,
+          'animal-painting': 1798,
+          'cityscape': 6598,
+          'figurative': 4500,
+          'flower-painting': 1800,
+          'genre-painting': 14997,
+          'landscape': 15000,
+          'marina': 1799,
+          'mythological-painting': 2097,
+          'nude-painting-nu': 3000,
+          'portrait': 14999,
+          'religious-painting': 8400,
+          'still-life': 2996,
+          'symbolic-painting': 2999}
 
 styleNum = {'abstract': 0,
             'animal-painting': 1,
@@ -126,7 +126,7 @@ def load(batch_size):
 
 #Testing code to validate that the logic in generating batches is working properly and quickly
 if __name__ == '__main__':
-    train_gen, valid_gen = load(100)
+    train_gen, valid_gen = load(14)
     t0 = time.time()
     for i, batch in enumerate(train_gen(), start=1):
         a,b = batch
