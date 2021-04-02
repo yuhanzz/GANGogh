@@ -6,6 +6,7 @@ import scipy.misc
 import time
 import random
 import os
+import imageio
 #Set the dimension of images you want to be passed in to the network
 DIM = 64
 
@@ -99,7 +100,7 @@ def make_generator(files, batch_size, n_classes):
                         curr = 0
                         random.shuffle(list(files[style]))
                     t0=time.time()
-                    image = scipy.misc.imread("{}/{}/{}.png".format(path, style, str(curr)),mode='RGB')
+                    image = imageio.imread("{}/{}/{}.png".format(path, style, str(curr)),pilmode='RGB')
                     #image = scipy.misc.imresize(image,(DIM,DIM))
                     images[n % batch_size] = image.transpose(2,0,1)
                     labels[n % batch_size, int(styleLabel)] = 1
